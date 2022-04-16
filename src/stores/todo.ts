@@ -47,5 +47,9 @@ export const useTodosStore = defineStore("todos", {
       const todo = this.todos.find((todo) => todo.id === id);
       if (todo) todo.isFinished = !todo.isFinished;
     },
+    removeItem(id: number) {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
   },
+  persist: true,
 });

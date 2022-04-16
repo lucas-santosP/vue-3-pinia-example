@@ -8,13 +8,14 @@ import PageTitle from "../components/PageTitle.vue";
 <template>
   <PageTitle>Todo</PageTitle>
 
-  <div class="flex gap-16">
-    <div>
+  <div class="flex flex-col">
+    <div class="flex gap-16 justify-between">
       <CreateTodo />
       <TodoFilter />
     </div>
-    <div>
-      <TodoList />
-    </div>
+
+    <hr class="w-full my-8" />
+
+    <TodoList />
   </div>
 </template>
