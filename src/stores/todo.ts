@@ -12,6 +12,7 @@ export type ITodoItem = {
   text: string;
   id: number;
   isFinished: boolean;
+  createdAt: string;
 };
 
 export const useTodosStore = defineStore("todos", {
@@ -38,7 +39,12 @@ export const useTodosStore = defineStore("todos", {
   },
   actions: {
     addTodo(text: string) {
-      this.todos.push({ text, id: this.nextId++, isFinished: false });
+      this.todos.push({
+        text,
+        id: this.nextId++,
+        isFinished: false,
+        createdAt: new Date().toISOString(),
+      });
     },
     setFilter(filter: ITodoFilter) {
       this.filter = filter;
@@ -51,5 +57,7 @@ export const useTodosStore = defineStore("todos", {
       this.todos = this.todos.filter((todo) => todo.id !== id);
     },
   },
-  persist: true,
+  persist: {
+    paths: ["todos", "nextId"],
+  },
 });

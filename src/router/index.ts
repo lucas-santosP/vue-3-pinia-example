@@ -10,21 +10,19 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/about",
-      name: "about",
-
-      // lazy-loaded
-      component: () => import("../views/AboutView.vue"),
-    },
-    {
       path: "/counter",
       name: "counter",
+      // lazy-loaded
       component: () => import("../views/CounterView.vue"),
     },
     {
       path: "/todo",
       name: "todo",
       component: () => import("../views/TodoView.vue"),
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      redirect: "/",
     },
   ],
 });

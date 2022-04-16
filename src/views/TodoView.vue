@@ -14,7 +14,7 @@ import PageTitle from "../components/PageTitle.vue";
       <TodoFilter />
     </div>
 
-    <hr class="w-full my-8" />
+    <hr class="w-full my-8 border-gray-300" />
 
     <TodoList />
   </div>
