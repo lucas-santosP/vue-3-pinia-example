@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  @apply bg-gray-800 w-full min-h-screen;
+}
+
+@layer base {
+  a {
+    @apply no-underline text-primary transition-all hover:bg-primary/20;
+
+    &.actived {
+      @apply bg-primary/20 cursor-default;
+    }
+  }
+}
