@@ -12,8 +12,18 @@ const counterStore = useCounterStore();
     <p>Count: {{ counterStore.counter }}</p>
     <p class="mb-4">Double Count: {{ counterStore.doubleCount }}</p>
 
-    <button @click="counterStore.increment">Increment</button>
-    <button @click="counterStore.decrement">Decrement</button>
+    <button
+      class="w-max bg-primary px-4 py-2 text-gray-100 uppercase font-medium"
+      @click="counterStore.increment"
+    >
+      Increment
+    </button>
+    <button
+      class="w-max bg-primary px-4 py-2 text-gray-100 uppercase font-medium"
+      @click="counterStore.decrement"
+    >
+      Decrement
+    </button>
   </div>
 </template>
 

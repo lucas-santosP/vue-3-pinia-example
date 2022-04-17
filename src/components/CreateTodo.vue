@@ -17,7 +17,7 @@ const addTodo = () => {
   <div class="w-full flex flex-col gap-1">
     <label for="newTodo" class="text-gray-400">New Todo</label>
 
-    <div class="flex gap-2">
+    <form @submit.prevent="addTodo" class="flex gap-2">
       <input
         type="text"
         name="newTodo"
@@ -28,12 +28,9 @@ const addTodo = () => {
         class="p-2 flex-1 w-full max-w-[350px] bg-gray-500"
       />
 
-      <button
-        class="w-max bg-primary px-4 py-2 text-gray-100 uppercase font-medium"
-        @click="addTodo"
-      >
+      <button type="submit" class="w-max bg-primary px-4 py-2 text-gray-100 uppercase font-medium">
         add
       </button>
-    </div>
+    </form>
   </div>
 </template>

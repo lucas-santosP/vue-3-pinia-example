@@ -40,7 +40,7 @@ const route = useRoute();
       </nav>
     </header>
 
-    <main class="w-full h-full px-8">
+    <main class="w-full h-full px-8 text-lg">
       <RouterView />
     </main>
   </div>

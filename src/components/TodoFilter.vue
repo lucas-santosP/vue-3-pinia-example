@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import { useTodosStore, isTodoFilter, FILTER_OPTIONS } from "@/stores/todo";
-import { storeToRefs } from "pinia";
 
 const todosStore = useTodosStore();
-const { filteredTodos, filter } = storeToRefs(todosStore);
 
 function filterTodos(e: Event) {
-  const value = (e.target as HTMLInputElement).value;
+  const value = (e.target as HTMLSelectElement).value;
   isTodoFilter(value) && todosStore.setFilter(value);
 }
 </script>
@@ -19,7 +17,7 @@ function filterTodos(e: Event) {
       name="filterTodo"
       id="filterTodo"
       class="w-full p-2 min-w-[160px] bg-gray-500 capitalize"
-      :value="filter"
+      :value="todosStore.filter"
       @change="filterTodos"
     >
       <option v-for="options in FILTER_OPTIONS" :value="options" class="capitalize">

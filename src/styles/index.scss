@@ -8,7 +8,7 @@
 
 @layer base {
   a {
-    @apply no-underline text-primary transition-all hover:bg-primary/20;
+    @apply no-underline text-primary transition-all hover:bg-primary/20 focus:bg-primary/20;
 
     &.actived {
       @apply bg-primary/20 cursor-default;
